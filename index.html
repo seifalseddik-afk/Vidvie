@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عربي - تعلم اللغة العربية بالذكاء الاصطناعي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="navigateTo('home')">
+                <span class="logo-icon">&#1593;</span>
+                <span class="logo-text">عربي</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="navigateTo('home')" class="nav-link active" data-page="home">الرئيسية</a>
+                <a href="#" onclick="navigateTo('lessons')" class="nav-link" data-page="lessons">الدروس</a>
+                <a href="#" onclick="navigateTo('quiz')" class="nav-link" data-page="quiz">الاختبارات</a>
+                <a href="#" onclick="navigateTo('ai-tutor')" class="nav-link" data-page="ai-tutor">المعلم الذكي</a>
+                <a href="#" onclick="navigateTo('progress')" class="nav-link" data-page="progress">تقدمي</a>
+            </div>
+            <button class="nav-menu-btn" onclick="toggleMenu()">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" onclick="navigateTo('home')">الرئيسية</a>
+        <a href="#" onclick="navigateTo('lessons')">الدروس</a>
+        <a href="#" onclick="navigateTo('quiz')">الاختبارات</a>
+        <a href="#" onclick="navigateTo('ai-tutor')">المعلم الذكي</a>
+        <a href="#" onclick="navigateTo('progress')">تقدمي</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="app">
+
+        <!-- Home Page -->
+        <section id="page-home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>تعلّم العربية بذكاء</h1>
+                    <p>رحلة تعليمية ممتعة مع معلم ذكاء اصطناعي يرافقك خطوة بخطوة</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="navigateTo('lessons')">ابدأ التعلم</button>
+                        <button class="btn btn-outline btn-lg" onclick="navigateTo('ai-tutor')">جرب المعلم الذكي</button>
+                    </div>
+                </div>
+                <div class="hero-illustration">
+                    <div class="floating-letters">
+                        <span class="float-letter" style="--delay: 0s; --x: 20%; --y: 10%">أ</span>
+                        <span class="float-letter" style="--delay: 1s; --x: 70%; --y: 20%">ب</span>
+                        <span class="float-letter" style="--delay: 2s; --x: 40%; --y: 60%">ت</span>
+                        <span class="float-letter" style="--delay: 0.5s; --x: 80%; --y: 70%">ث</span>
+                        <span class="float-letter" style="--delay: 1.5s; --x: 15%; --y: 80%">ج</span>
+                        <span class="float-letter" style="--delay: 2.5s; --x: 60%; --y: 40%">ح</span>
+                        <span class="float-letter" style="--delay: 0.8s; --x: 90%; --y: 45%">خ</span>
+                        <span class="float-letter" style="--delay: 1.8s; --x: 35%; --y: 30%">د</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2 class="section-title">لماذا تختار عربي؟</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">&#129302;</div>
+                        <h3>معلم ذكاء اصطناعي</h3>
+                        <p>معلم شخصي يجيب على أسئلتك ويشرح لك القواعد بطريقة مبسطة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128218;</div>
+                        <h3>دروس متدرجة</h3>
+                        <p>محتوى تعليمي مرتب من الأساسيات إلى المستويات المتقدمة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#127919;</div>
+                        <h3>اختبارات تفاعلية</h3>
+                        <p>اختبر معلوماتك مع اختبارات ممتعة وتحديات يومية</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128200;</div>
+                        <h3>تتبع التقدم</h3>
+                        <p>راقب تطورك مع إحصائيات مفصلة ونقاط إنجاز</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="levels-section">
+                <h2 class="section-title">اختر مستواك</h2>
+                <div class="levels-grid">
+                    <div class="level-card" onclick="selectLevel(1)">
+                        <div class="level-badge">١</div>
+                        <h3>الصف الأول - الثالث</h3>
+                        <p>الحروف، الحركات، كلمات بسيطة</p>
+                        <span class="level-tag">مبتدئ</span>
+                    </div>
+                    <div class="level-card" onclick="selectLevel(2)">
+                        <div class="level-badge">٢</div>
+                        <h3>الصف الرابع - السادس</h3>
+                        <p>القواعد الأساسية، القراءة، الإملاء</p>
+                        <span class="level-tag">متوسط</span>
+                    </div>
+                    <div class="level-card" onclick="selectLevel(3)">
+                        <div class="level-badge">٣</div>
+                        <h3>الصف السابع - التاسع</h3>
+                        <p>النحو والصرف، التعبير، الأدب</p>
+                        <span class="level-tag">متقدم</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Page -->
+        <section id="page-lessons" class="page">
+            <div class="page-header">
+                <h1>الدروس التعليمية</h1>
+                <p>اختر الموضوع الذي تريد تعلمه</p>
+            </div>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="filterLessons('all')">الكل</button>
+                <button class="tab-btn" onclick="filterLessons('letters')">الحروف</button>
+                <button class="tab-btn" onclick="filterLessons('vocabulary')">المفردات</button>
+                <button class="tab-btn" onclick="filterLessons('grammar')">القواعد</button>
+                <button class="tab-btn" onclick="filterLessons('reading')">القراءة</button>
+                <button class="tab-btn" onclick="filterLessons('writing')">الإملاء</button>
+            </div>
+
+            <div class="lessons-grid" id="lessonsGrid">
+                <!-- Lessons will be populated by JavaScript -->
+            </div>
+
+            <!-- Lesson Detail View -->
+            <div class="lesson-detail" id="lessonDetail" style="display:none;">
+                <button class="btn btn-outline back-btn" onclick="closeLessonDetail()">&#8594; العودة للدروس</button>
+                <div class="lesson-content" id="lessonContent">
+                    <!-- Lesson content will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Page -->
+        <section id="page-quiz" class="page">
+            <div class="page-header">
+                <h1>الاختبارات</h1>
+                <p>اختبر معلوماتك واكسب نقاط</p>
+            </div>
+
+            <!-- Quiz Selection -->
+            <div id="quizSelection">
+                <div class="quiz-categories" id="quizCategories">
+                    <!-- Quiz categories will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Active Quiz -->
+            <div id="activeQuiz" style="display:none;">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <span id="quizQuestionNum">١</span> / <span id="quizTotalQuestions">١٠</span>
+                    </div>
+                    <div class="quiz-timer" id="quizTimer">
+                        <span class="timer-icon">&#9201;</span>
+                        <span id="timerDisplay">00:30</span>
+                    </div>
+                    <div class="quiz-score">
+                        النقاط: <span id="quizScore">0</span>
+                    </div>
+                </div>
+                <div class="quiz-progress-bar">
+                    <div class="progress-fill" id="quizProgressBar"></div>
+                </div>
+                <div class="quiz-body" id="quizBody">
+                    <!-- Quiz question will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Quiz Results -->
+            <div id="quizResults" style="display:none;">
+                <div class="results-card">
+                    <div class="results-icon" id="resultsIcon">&#127942;</div>
+                    <h2 id="resultsTitle">أحسنت!</h2>
+                    <div class="results-score">
+                        <span class="score-big" id="resultScore">0</span>
+                        <span class="score-label">نقطة</span>
+                    </div>
+                    <div class="results-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="resultCorrect">0</span>
+                            <span class="stat-label">إجابة صحيحة</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="resultWrong">0</span>
+                            <span class="stat-label">إجابة خاطئة</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="resultPercentage">0%</span>
+                            <span class="stat-label">النسبة</span>
+                        </div>
+                    </div>
+                    <div class="results-buttons">
+                        <button class="btn btn-primary" onclick="retryQuiz()">أعد المحاولة</button>
+                        <button class="btn btn-outline" onclick="showQuizSelection()">اختبار آخر</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tutor Page -->
+        <section id="page-ai-tutor" class="page">
+            <div class="page-header">
+                <h1>المعلم الذكي</h1>
+                <p>اسأل معلمك الذكي أي سؤال عن اللغة العربية</p>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">&#129302;</div>
+                        <div class="message-content">
+                            <p>مرحباً! أنا معلمك الذكي للغة العربية. يمكنني مساعدتك في:</p>
+                            <ul>
+                                <li>شرح قواعد النحو والصرف</li>
+                                <li>تصحيح الأخطاء الإملائية</li>
+                                <li>شرح معاني الكلمات</li>
+                                <li>إعراب الجمل</li>
+                                <li>تمارين وأسئلة تفاعلية</li>
+                            </ul>
+                            <p>اكتب سؤالك وسأساعدك! &#128522;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-suggestions" id="chatSuggestions">
+                    <button class="suggestion-btn" onclick="sendSuggestion('ما هو الفرق بين الفاعل والمفعول به؟')">ما الفرق بين الفاعل والمفعول به؟</button>
+                    <button class="suggestion-btn" onclick="sendSuggestion('أعرب: ذهب الولد إلى المدرسة')">أعرب جملة</button>
+                    <button class="suggestion-btn" onclick="sendSuggestion('ما هي أنواع الجملة في اللغة العربية؟')">أنواع الجمل</button>
+                    <button class="suggestion-btn" onclick="sendSuggestion('أعطني تمريناً في الإملاء')">تمرين إملاء</button>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="اكتب سؤالك هنا..." onkeypress="handleChatKeypress(event)">
+                    <button class="chat-send-btn" onclick="sendMessage()">&#10148;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Page -->
+        <section id="page-progress" class="page">
+            <div class="page-header">
+                <h1>تقدمي</h1>
+                <p>تابع رحلتك التعليمية</p>
+            </div>
+
+            <div class="progress-overview">
+                <div class="progress-stat-card">
+                    <div class="stat-icon">&#128293;</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="streakDays">0</span>
+                        <span class="stat-desc">أيام متتالية</span>
+                    </div>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon">&#11088;</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="totalPoints">0</span>
+                        <span class="stat-desc">نقطة مكتسبة</span>
+                    </div>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon">&#128214;</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="completedLessons">0</span>
+                        <span class="stat-desc">درس مكتمل</span>
+                    </div>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon">&#9989;</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="completedQuizzes">0</span>
+                        <span class="stat-desc">اختبار منجز</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h2 class="section-title">الإنجازات</h2>
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Achievements will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="activity-section">
+                <h2 class="section-title">النشاط الأخير</h2>
+                <div class="activity-list" id="activityList">
+                    <div class="empty-state">
+                        <span class="empty-icon">&#128203;</span>
+                        <p>لم تبدأ أي نشاط بعد. ابدأ التعلم الآن!</p>
+                        <button class="btn btn-primary" onclick="navigateTo('lessons')">ابدأ التعلم</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">&#1593;</span>
+                <span>عربي</span>
+            </div>
+            <p>تطبيق تعلم اللغة العربية بالذكاء الاصطناعي - للمستوى المدرسي</p>
+            <p class="footer-copy">&copy; 2026 عربي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/lessons.js"></script>
+    <script src="js/ai-tutor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

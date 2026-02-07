@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidvie - Opus 4.6 Test App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vidvie</h1>
+      <p class="subtitle">Simple Test App — Built with Claude Opus 4.6</p>
+    </header>
+
+    <main>
+      <section class="card counter-card">
+        <h2>Counter</h2>
+        <div class="counter-display" id="counter">0</div>
+        <div class="button-group">
+          <button id="decrement">−</button>
+          <button id="reset">Reset</button>
+          <button id="increment">+</button>
+        </div>
+      </section>
+
+      <section class="card todo-card">
+        <h2>Quick Notes</h2>
+        <form id="note-form">
+          <input type="text" id="note-input" placeholder="Add a note..." autocomplete="off">
+          <button type="submit">Add</button>
+        </form>
+        <ul id="note-list"></ul>
+        <p class="empty-msg" id="empty-msg">No notes yet. Add one above!</p>
+      </section>
+
+      <section class="card info-card">
+        <h2>About</h2>
+        <p>This is a minimal test app to verify that Claude Opus 4.6 can scaffold a working web application from scratch.</p>
+        <div class="tech-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Vanilla JS</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Vidvie &mdash; Test App</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprenons le Français - تعلّم الفرنسية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Splash / Home Screen -->
+        <div id="home-screen" class="screen active">
+            <div class="home-container">
+                <div class="logo-area">
+                    <div class="logo-icon">🇫🇷</div>
+                    <h1 class="app-title">Apprenons le Français</h1>
+                    <p class="app-subtitle">تعلّم الفرنسية - السنة الأولى ابتدائي</p>
+                    <p class="app-desc">Programme de 1ère année primaire - Tunisie</p>
+                </div>
+                <div class="lessons-grid" id="lessons-grid">
+                    <!-- Lessons will be injected by JS -->
+                </div>
+                <div class="home-footer">
+                    <p>🎓 Apprendre en s'amusant! - !تعلّم وأنت تلعب 🎓</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lesson Screen -->
+        <div id="lesson-screen" class="screen">
+            <header class="lesson-header">
+                <button class="btn-back" id="btn-back" aria-label="Retour">
+                    <span class="back-arrow">←</span>
+                    <span>الرجوع</span>
+                </button>
+                <h2 class="lesson-title" id="lesson-title"></h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </header>
+
+            <main class="lesson-content">
+                <!-- Vocabulary Mode -->
+                <div id="vocab-mode" class="mode active">
+                    <div class="vocab-card" id="vocab-card">
+                        <div class="vocab-image" id="vocab-image"></div>
+                        <div class="vocab-french" id="vocab-french"></div>
+                        <div class="vocab-phonetic" id="vocab-phonetic"></div>
+                        <div class="vocab-arabic" id="vocab-arabic"></div>
+                        <button class="btn-sound" id="btn-sound" aria-label="Écouter">
+                            🔊 استمع / Écouter
+                        </button>
+                    </div>
+                    <div class="vocab-nav">
+                        <button class="btn-nav btn-prev" id="btn-prev">→ السابق</button>
+                        <span class="vocab-counter" id="vocab-counter"></span>
+                        <button class="btn-nav btn-next" id="btn-next">التالي ←</button>
+                    </div>
+                    <button class="btn-quiz" id="btn-start-quiz">
+                        🎯 ابدأ الاختبار - Commencer le quiz!
+                    </button>
+                </div>
+
+                <!-- Quiz Mode -->
+                <div id="quiz-mode" class="mode">
+                    <div class="quiz-question" id="quiz-question"></div>
+                    <div class="quiz-prompt" id="quiz-prompt"></div>
+                    <div class="quiz-options" id="quiz-options"></div>
+                    <div class="quiz-feedback" id="quiz-feedback"></div>
+                    <button class="btn-next-question hidden" id="btn-next-question">
+                        السؤال التالي ← Question suivante
+                    </button>
+                </div>
+
+                <!-- Results Mode -->
+                <div id="results-mode" class="mode">
+                    <div class="results-card">
+                        <div class="results-emoji" id="results-emoji"></div>
+                        <h2 class="results-title" id="results-title"></h2>
+                        <p class="results-subtitle" id="results-subtitle"></p>
+                        <div class="results-score" id="results-score"></div>
+                        <div class="results-stars" id="results-stars"></div>
+                        <div class="results-buttons">
+                            <button class="btn-retry" id="btn-retry">
+                                🔄 أعد الاختبار - Réessayer
+                            </button>
+                            <button class="btn-home" id="btn-home-results">
+                                🏠 الرئيسية - Accueil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
